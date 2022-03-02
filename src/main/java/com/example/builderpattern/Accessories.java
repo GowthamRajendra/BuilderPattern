@@ -16,7 +16,7 @@ public interface Accessories {
     float getPrice();
 
     /***
-     * calculates price of accessory based on quality and sets that as the proce
+     * calculates price of accessory based on quality and sets that as the price
      *
      * @param multiplier amount to multiply the original price by
      */

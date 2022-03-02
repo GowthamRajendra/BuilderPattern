@@ -3,19 +3,35 @@ package com.example.builderpattern;
 import java.util.ArrayList;
 
 public class Outfit {
-    private ArrayList<Clothes> outfit = new ArrayList<Clothes>();
-    private ArrayList<Accessories> accessories = new ArrayList<Accessories>();
+    // list of clothes and accessories that make up the outfit
+    final private ArrayList<Clothes> outfit = new ArrayList<>();
+    final private ArrayList<Accessories> accessories = new ArrayList<>();
 
+    /**
+     * adds specified clothes to the list
+     *
+     * @param clothes an instance of the clothes class
+     */
     public void addClothes(Clothes clothes)
     {
         outfit.add(clothes);
     }
 
+    /**
+     * adds specified accessory to list
+     *
+     * @param accessory an instance of the accessories class
+     */
     public void addAccessory(Accessories accessory)
     {
         accessories.add(accessory);
     }
 
+    /**
+     * calculates the total price of the outfit
+     *
+     * @return total price of outfit
+     */
     public float priceTotal()
     {
         float total = 0.0f;
@@ -33,21 +49,26 @@ public class Outfit {
         return total;
     }
 
+    /**
+     * returns the string representation of the whole outfit
+     *
+     * @return string representation of class
+     */
     @Override
     public String toString() {
-        String finalOutfit = "";
+        StringBuilder finalOutfit = new StringBuilder();
 
         for(Clothes cloth : outfit)
         {
-            finalOutfit += cloth.toString() + "\n";
+            finalOutfit.append(cloth.toString()).append("\n");
         }
         for(Accessories access : accessories)
         {
-            finalOutfit += access.toString() + "\n";
+            finalOutfit.append(access.toString()).append("\n");
         }
 
-        finalOutfit += "\nTotal price of outfit: " + priceTotal();
+        finalOutfit.append("\nTotal price of outfit: ").append(priceTotal());
 
-        return finalOutfit;
+        return finalOutfit.toString();
     }
 }

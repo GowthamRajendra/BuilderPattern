@@ -1,7 +1,7 @@
 package com.example.builderpattern;
 
 public class OutfitBuilder {
-    private Outfit outfit = new Outfit();
+    final private Outfit outfit = new Outfit();
 
     public void buildOuterTop(String name, String colour, Boolean hasHood, String size)
     {
